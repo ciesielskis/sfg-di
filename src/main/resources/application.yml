@@ -1,0 +1,5 @@
+di:
+  jms:
+    username: jms_ciesielskis
+    password: jms_passwd
+    dburl: jms_url123
