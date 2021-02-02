@@ -3,3 +3,13 @@ di:
     username: jms_ciesielskis
     password: jms_passwd
     dburl: jms_url123
+
+---
+spring:
+  config:
+    activate:
+      on-profile: de
+
+di:
+  jms:
+    username: de_jms_ciesielskis
