@@ -1,6 +1,7 @@
 package io.github.ciesielskis.sfgdi;
 
-import io.github.ciesielskis.sfgdi.controllers.*;
+import io.github.ciesielskis.sfgdi.examplebeans.FakeDataSource;
+import io.github.ciesielskis.sfgdi.examplebeans.FakeJmsBroker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -11,21 +12,11 @@ public class SfgDiApplication {
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(SfgDiApplication.class, args);
 
-		System.out.println("------- Primary Bean");
-		MyController myController = (MyController) ctx.getBean("myController");
-		System.out.println(myController.sayHello());
+		FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
+		System.out.println(fakeDataSource.getUser());
 
-		System.out.println("------- Property");
-		PropertyInjectedController propertyInjectedController = (PropertyInjectedController) ctx.getBean("propertyInjectedController");
-		System.out.println(propertyInjectedController.getGreeting());
-
-		System.out.println("------- Setter");
-		SetterInjectedController setterInjectedController = (SetterInjectedController) ctx.getBean("setterInjectedController");
-		System.out.println(setterInjectedController.getGreeting());
-
-		System.out.println("------- Constructor");
-		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
-		System.out.println(constructorInjectedController.getGreeting());
+		FakeJmsBroker fakeJmsBroker = ctx.getBean(FakeJmsBroker.class);
+		System.out.println(fakeJmsBroker.getUser());
 	}
 
 }

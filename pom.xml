@@ -12,7 +12,7 @@
 	<artifactId>sfg-di</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>sfg-di</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Dependency Injection Examples</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
